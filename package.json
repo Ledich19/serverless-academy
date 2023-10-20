@@ -1,0 +1,11 @@
+{
+  "name": "serverless-academy-main",
+  "version": "1.0.0",
+  "description": "01_cli_interactive_sort",
+  "main": "index.js",
+  "scripts": {
+    "01": "node 01_cli_interactive_sort/app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
