@@ -25,6 +25,6 @@ npm run 02`
 or
 
 ```
-cd .\02_cli_primitive_DB\src\
-node app.js
+cd .\02_cli_primitive_DB\
+node index.js
 ```

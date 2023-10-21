@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "01": "node 01_cli_interactive_sort/app.js",
-    "02": "node 02_cli_primitive_DB/src/app.js"
+    "02": "node 02_cli_primitive_DB/index.js"
   },
   "author": "",
   "license": "ISC"
