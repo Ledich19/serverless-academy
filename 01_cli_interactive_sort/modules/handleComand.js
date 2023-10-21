@@ -13,7 +13,7 @@ const handleCommand = async (command, inputString) => {
     case command === '3':
       return arrayForSort.filter((el) => !isNaN(el)).sort((a, b) => b - a);
     case command === '4':
-      return arrayForSort.filter((el) => !isNaN(el)).sort((a, b) => a.length - b.length);
+      return arrayForSort.filter((el) => isNaN(el)).sort((a, b) => a.length - b.length);
     case command === '5':
       return [...new Set(arrayForSort.filter((el) => isNaN(el)))];
     case command === '6':

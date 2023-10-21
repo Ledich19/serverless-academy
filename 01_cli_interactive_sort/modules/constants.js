@@ -9,9 +9,9 @@ export const NUMBER_OPTIONS = `\u001B[34m
 export const WELCOME = `
 \u001B[33mWelcome \u001B[35m
 `;
-export const INSTRUCTIONS = `\u001B[33mTo exit, type\u001B[35m exit`;
+export const INSTRUCTIONS = `\u001B[00mTo exit, type\u001B[35m exit`;
 export const WRITE_DATA = `
 \u001B[33mPlease write some numbers or words separated by spaces.\u001B[0m
 `;
 export const CHOSE_OPTION = `\u001B[33m Select (1 - 6) and press ENTER: \u001B[00m`;
-export const EXIT = `\u001B[33m Thank you for using our app goodbye! \n \u001B[0`;
+export const EXIT = `Thank you for using our app goodbye! \n`;
