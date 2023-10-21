@@ -13,6 +13,7 @@ cd .\01_cli_interactive_sort\
 
 node app.js -- --username=YourName
 ```
+
 ---
 
 ## 02_cli_primitive_DB
@@ -20,8 +21,10 @@ node app.js -- --username=YourName
 ```bash
 npm run 02`
 ```
+
 or
+
 ```
-cd .\02_cli_primitive_DB\
+cd .\02_cli_primitive_DB\src\
 node app.js
 ```

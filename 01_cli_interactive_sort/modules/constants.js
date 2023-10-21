@@ -15,3 +15,5 @@ export const WRITE_DATA = `
 `;
 export const CHOSE_OPTION = `\u001B[33m Select (1 - 6) and press ENTER: \u001B[00m`;
 export const EXIT = `Thank you for using our app goodbye! \n`;
+export const OPERATION_FAILED = `\u001B[31m Operation failed : \u001B[0m`;
+export const INVALID_INPUT = `\u001B[31m Invalid input \u001B[0m`;

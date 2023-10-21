@@ -19,7 +19,7 @@ const handleCommand = async (command, inputString) => {
     case command === '6':
       return [...new Set(arrayForSort)];
     default:
-      console.error('sach command not exist');
+      console.error('such command not exist');
       break;
   }
 };

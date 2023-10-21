@@ -1,0 +1,3 @@
+{"gender":"male","age":"6","user":"aleks"}
+{"gender":"female","age":"7","user":"jane"}
+{"gender":"male","age":"88","user":"gorge"}

@@ -8,6 +8,7 @@ import {
   NUMBER_OPTIONS,
   WELCOME,
   WRITE_DATA,
+  OPERATION_FAILED,
 } from './modules/constants.js';
 
 const username = process.argv[2]?.slice(2).split('=')[1] || '';
