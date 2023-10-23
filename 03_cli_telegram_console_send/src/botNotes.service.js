@@ -1,26 +1,40 @@
-import https from 'node:https';
+import { readFile } from 'node:fs/promises';
 
-// https://api.telegram.org/bot<ТОКЕН>/sendMessage?chat_id=<ID_ЧАТА>&text=Hello%20World
-//const options = new URL('https://abc:xyz@example.com');
-// path: `/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`,
-export const sendMessage = (token, chatId, text) => {
-  const options = {
-    hostname: 'api.telegram.org',
-    port: 443,
-    path: `/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`,
-    method: 'POST',
-  };
-  const req = https.request(options, (res) => {
-    console.log('statusCode:', res.statusCode);
-    console.log('headers:', res.headers);
+const BASE_URL = 'https://api.telegram.org';
 
-    res.on('data', (d) => {
-      process.stdout.write(d);
+export const sendMessage = async (token, chatId, text) => {
+  const url = `${BASE_URL}/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+    text
+  )}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
     });
-  });
 
-  req.on('error', (e) => {
-    console.error(e);
-  });
-  req.end();
+    if (response.status === 200) {
+      console.log('success');
+    }
+  } catch (error) {
+    console.error('ERROR:', error);
+  }
+};
+
+export const sendPhoto = async (token, chatId, pathToFile) => {
+  const url = `${BASE_URL}/bot${token}/sendPhoto?chat_id=${chatId}`;
+  try {
+    const file = await readFile(pathToFile);
+    const imageBlob = new Blob([file]);
+    const formData = new FormData();
+    formData.append('photo', imageBlob);
+    const response = await fetch(url, {
+      method: 'POST',
+      body: formData,
+    });
+    if (response.status === 200) {
+      console.log('success');
+    }
+  } catch (error) {
+    console.error('ERROR:', error);
+  }
 };

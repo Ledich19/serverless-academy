@@ -1,7 +1,7 @@
 import { program } from 'commander';
 import bot from './src/bot.js';
 import useEnv from './src/useEnv.js';
-import { sendMessage } from './src/botNotes.service.js';
+import { sendMessage, sendPhoto } from './src/botNotes.service.js';
 
 const pathToEnv = new URL('./.env', import.meta.url);
 useEnv(pathToEnv);
@@ -25,7 +25,8 @@ program
   .command('send-photo <path>')
   .alias('p')
   .description('send photo to telegram')
-  .action((str) => {
+  .action(async (str) => {
+    sendPhoto(token, chatId, str);
     console.log(str, 'send photo');
   });
 
