@@ -7,7 +7,8 @@
     "01": "node 01_cli_interactive_sort/app.js",
     "02": "node 02_cli_primitive_DB/app.js",
     "03": "node 03_cli_telegram_console_send/app.js",
-    "03:help": "node 03_cli_telegram_console_send/app.js --help"
+    "03:help": "node 03_cli_telegram_console_send/app.js --help",
+    "04": "node 04_telegram_bot_weather_forecast/app.js"
   },
   "author": "",
   "license": "ISC"
