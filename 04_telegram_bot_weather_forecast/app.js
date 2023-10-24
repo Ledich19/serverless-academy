@@ -1,8 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api';
 import useEnv from './src/useEnv.js';
 import { getForecast, getLatLon } from './src/services/weather.service.js';
-import { AT_INTERVALS_OF_3, AT_INTERVALS_OF_6, CLOSE_MENU } from './src/services/constsnts.js';
-import commands from './src/services/comands.js';
+import { AT_INTERVALS_OF_3, AT_INTERVALS_OF_6, CLOSE_MENU } from './src/constsnts.js';
+import commands from './src/comands.js';
 
 useEnv();
 const token = process.env.BOT_TOCkEN;
@@ -88,7 +88,11 @@ bot.on('message', async (msg) => {
           remove_keyboard: true,
         },
       });
-      sendWeathersMessages(weather.list);
+      if (msg.text === AT_INTERVALS_OF_6) {
+        sendWeathersMessages(weather.list.filter((_, i) => i % 2));
+      } else {
+        sendWeathersMessages(weather.list);
+      }
     }
   }
 });
