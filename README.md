@@ -23,8 +23,8 @@ $ npm run 02`
 or
 
 ```
-cd .\02_cli_primitive_DB\
-$ node app.js
+$ cd .\02_cli_primitive_DB\
+$ npm start
 ```
 
 ## 03_cli_telegram_console_sender
@@ -81,7 +81,7 @@ cd .\04_telegram_bot_weather_forecast\
 ```
 
 ```
-$ npm run 04
+npm start
 ```
 
 ## 05_telegram_bot_exchange_rate
