@@ -7,7 +7,7 @@ const handleCommand = async (command, inputString) => {
 
   switch (true) {
     case command === '1':
-      return arrayForSort.filter((el) => isNaN(el)).sort();
+      return arrayForSort.filter((el) => isNaN(el)).sort((a, b) => a.localeCompare(b));
     case command === '2':
       return arrayForSort.filter((el) => !isNaN(el)).sort((a, b) => a - b);
     case command === '3':
