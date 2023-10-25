@@ -105,3 +105,19 @@ cd .\05_telegram_bot_exchange_rate\
 ```
 $ npm start
 ```
+
+## 06_instagram_giveaway
+
+```bash
+$ npm run 06
+```
+
+or
+
+```
+cd .\05_telegram_bot_exchange_rate\
+```
+
+```
+$ npm start
+```

@@ -9,7 +9,8 @@
     "03": "node 03_cli_telegram_console_send/app.js",
     "03:help": "node 03_cli_telegram_console_send/app.js --help",
     "04": "node 04_telegram_bot_weather_forecast/app.js",
-    "05": "node 05_telegram_bot_exchange_rate/app.js"
+    "05": "node 05_telegram_bot_exchange_rate/app.js",
+    "06": "node 06_instagram_giveaway/app.js"
   },
   "author": "",
   "license": "ISC"

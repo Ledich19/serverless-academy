@@ -1,4 +1,4 @@
-import { writeFile, readFile, open } from 'node:fs/promises';
+import { writeFile, open } from 'node:fs/promises';
 
 class Database {
   constructor(dbName) {
