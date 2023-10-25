@@ -1,6 +1,6 @@
 import { countUniqueValues, countInAllFiles, countInAtleastTen } from './modules/countFunctions.js';
 import executionTimeAsyncFn from './modules/executionTimeAsyncFn.js';
-import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
+import { Worker, isMainThread, workerData } from 'worker_threads';
 
 const uniqueValues = executionTimeAsyncFn(countUniqueValues);
 const existInAllFiles = executionTimeAsyncFn(countInAllFiles);

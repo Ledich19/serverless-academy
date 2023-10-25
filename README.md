@@ -121,3 +121,19 @@ cd .\05_telegram_bot_exchange_rate\
 ```
 $ npm start
 ```
+
+## 07_grouping_vacation
+
+```bash
+$ npm run 07
+```
+
+or
+
+```
+cd .\07_grouping_vacation\
+```
+
+```
+$ npm start
+```
