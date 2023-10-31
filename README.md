@@ -137,3 +137,19 @@ cd .\07_grouping_vacation\
 ```
 $ npm start
 ```
+
+## 08_json_sorting
+
+```bash
+$ npm run 07
+```
+
+or
+
+```
+cd .\08_json_sorting\
+```
+
+```
+$ npm start
+```

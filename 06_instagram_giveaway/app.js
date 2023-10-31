@@ -12,11 +12,9 @@ if (isMainThread) {
   new Worker(new URL(import.meta.url), {
     workerData: { func: 'uniqueValues', folderPath },
   });
-
   new Worker(new URL(import.meta.url), {
     workerData: { func: 'existInAllFiles', folderPath },
   });
-
   new Worker(new URL(import.meta.url), {
     workerData: { func: 'existInAtleastTen', folderPath },
   });
