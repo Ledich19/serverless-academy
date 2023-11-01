@@ -1,5 +1,5 @@
 import { AT_INTERVALS_OF_3, AT_INTERVALS_OF_6, CITY_NAME } from '../constants.js';
-import { getForecast, getLatLon } from '../services/weather.service.js';
+import { getForecast } from '../services/weather.service.js';
 
 export class AtIntervalsOfCommand {
   constructor(bot) {
@@ -36,11 +36,8 @@ export class AtIntervalsOfCommand {
     this.bot.on('message', async (msg) => {
       if (this.intervals.includes(msg.text)) {
         const chatId = msg.chat.id;
-
-        const lanLon = await getLatLon(CITY_NAME);
-        if (lanLon.length > 0) {
-          const { lat, lon } = lanLon[0];
-          const weather = await getForecast({ lat, lon });
+    
+          const weather = await getForecast(CITY_NAME);
 
           const message = `Погода для: ${weather.city.name}${weather.city.country}`;
           this.bot.sendMessage(chatId, message);
@@ -48,7 +45,7 @@ export class AtIntervalsOfCommand {
           const weatherList =
             msg.text === AT_INTERVALS_OF_6 ? weather.list.filter((_, i) => i % 2) : weather.list;
           this.#sendWeatherMessages(weatherList, chatId);
-        }
+        
       }
     });
   }

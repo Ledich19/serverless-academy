@@ -1,5 +1,5 @@
 import { CITY_NAME, WIND } from '../constants.js';
-import { getForecast, getLatLon } from '../services/weather.service.js';
+import { getForecast } from '../services/weather.service.js';
 
 export class WindOfCommand {
   constructor(bot) {
@@ -11,10 +11,7 @@ export class WindOfCommand {
       if (msg.text === WIND) {
         const chatId = msg.chat.id;
 
-        const lanLon = await getLatLon(CITY_NAME);
-        if (lanLon.length > 0) {
-          const { lat, lon } = lanLon[0];
-          const weather = await getForecast({ lat, lon });
+          const weather = await getForecast(CITY_NAME);
 
           const message = weather.list.reduce((accumulator, element) => {
             return (
@@ -29,7 +26,7 @@ export class WindOfCommand {
           this.bot.sendMessage(chatId, message, {
             parse_mode: 'HTML',
           });
-        }
+        
       }
     });
   }

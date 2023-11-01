@@ -25,18 +25,22 @@ class Bot {
   }
 
   init() {
-    this.commands = [
-      new StartCommand(this.bot, this.startKeyboard, this.prevKeyboards),
-      new PrevCommand(this.bot, this.startKeyboard, this.prevKeyboards),
-      new CloseCommand(this.bot),
-      new ExchangeRateCommand(this.bot, this.prevKeyboards),
-      new WeatherCommand(this.bot, this.prevKeyboards),
-      new AtIntervalsOfCommand(this.bot),
-      new CurrenciesCommand(this.bot),
-      new WindOfCommand(this.bot),
-    ];
-    for (const command of this.commands) {
-      command.handle();
+    try {
+      this.commands = [
+        new StartCommand(this.bot, this.startKeyboard, this.prevKeyboards),
+        new PrevCommand(this.bot, this.startKeyboard, this.prevKeyboards),
+        new CloseCommand(this.bot),
+        new ExchangeRateCommand(this.bot, this.prevKeyboards),
+        new WeatherCommand(this.bot, this.prevKeyboards),
+        new AtIntervalsOfCommand(this.bot),
+        new CurrenciesCommand(this.bot),
+        new WindOfCommand(this.bot),
+      ];
+      for (const command of this.commands) {
+        command.handle();
+      }
+    } catch (error) {
+      console.error('An error occurred during bot initialization:', error);
     }
   }
 }
