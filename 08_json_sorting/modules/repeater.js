@@ -8,7 +8,6 @@ const repeater = (fn, times) => {
           return null;
         }
         try {
-          console.log(count);
           const result = await fn(url);
           if (result && result.code === 200) {
             resolve(result);

@@ -9,13 +9,17 @@ const main = async () => {
     return getDataThreeTimes(url);
   });
   const results = await Promise.allSettled(promises);
+  const isDoneArr = [];
   results.forEach((element) => {
     if (element.status == 'fulfilled') {
       const isDone = checkIsDone(element.value.data);
+      isDoneArr.push(isDone);
       console.log(`[Success] ${element.value.url} : isDone - ${isDone.toString()}`);
     } else {
       console.log(`[Fail] ${element.reason.url} : ${element.reason.message}`);
     }
   });
+  console.log(`Found True values: ${isDoneArr.filter((el) => el).length}`);
+  console.log(`Found False values: ${isDoneArr.filter((el) => !el).length}`);
 };
 main();

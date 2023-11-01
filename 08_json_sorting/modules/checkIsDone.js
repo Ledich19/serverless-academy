@@ -3,12 +3,9 @@ const checkIsDone = (data) => {
   if (typeof data != 'string') {
     stingData = JSON.stringify(data);
   }
-
-  if (stingData.includes('"isDone":true')) {
-    return true;
-  }
-  if (stingData.includes('"isDone":false')) {
-    return false;
+  const match = /"isDone":\s*(true|false)/.exec(stingData);
+  if (match) {
+    return match[1] === 'true';
   }
 };
 export default checkIsDone;
