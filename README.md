@@ -2,7 +2,6 @@
 
 ## 01_cli_interactive_sort
 
-
 ```bash
 cd .\01_cli_interactive_sort\
 
@@ -47,11 +46,11 @@ This is a Telegram bot that can provide data for your city. To run it, fill out 
 
 ### .env
 
-BOT_TOKEN: *This variable should be set to your Telegram Bot Token, which you obtain from the BotFather when you create a new bot on Telegram.*
+BOT*TOKEN: \_This variable should be set to your Telegram Bot Token, which you obtain from the BotFather when you create a new bot on Telegram.*
 
-CHAT_ID: *This variable should be set to the Chat ID where you want the bot to send messages. You can obtain the Chat ID by sending a message to the bot and then using a method to retrieve the chat ID.*
+CHAT*ID: \_This variable should be set to the Chat ID where you want the bot to send messages. You can obtain the Chat ID by sending a message to the bot and then using a method to retrieve the chat ID.*
 
-APP_ID: *This variable should be set to your OpenWeatherMap API Key. You can get this key by signing up on the https://openweathermap.org/ website.*
+APP*ID: \_This variable should be set to your OpenWeatherMap API Key. You can get this key by signing up on the https://openweathermap.org/ website.*
 
 ```
 cd .\04_telegram_bot_weather_forecast\
@@ -65,9 +64,9 @@ npm start
 
 ### .env
 
-BOT_TOKEN: *This variable should be set to your Telegram Bot Token, which you obtain from the BotFather when you create a new bot on Telegram.*
+BOT*TOKEN: \_This variable should be set to your Telegram Bot Token, which you obtain from the BotFather when you create a new bot on Telegram.*
 
-APP_ID: *This variable should be set to your OpenWeatherMap API Key. You can get this key by signing up on the https://openweathermap.org/ website.*
+APP*ID: \_This variable should be set to your OpenWeatherMap API Key. You can get this key by signing up on the https://openweathermap.org/ website.*
 
 ```
 cd .\05_telegram_bot_exchange_rate\
@@ -106,15 +105,17 @@ cd .\08_json_sorting\
 ```
 $ npm start
 ```
+
 ## 09
+
 docker compose up dev-db -d
 
 docker exec -it 09_auth_api-dev-db-1 psql --version
 docker exec -it 09_auth_api-dev-db-1 psql -h localhost -U postgres -d nestjs
 
 CREATE TABLE your_table_name (
-    id SERIAL PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    passwordHash VARCHAR(255) NOT NULL,
-    refreshToken VARCHAR(255)
+id SERIAL PRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+passwordHash VARCHAR(255) NOT NULL,
+refreshToken VARCHAR(255)
 );
