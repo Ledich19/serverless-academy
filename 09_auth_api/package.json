@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:w": "set PORT=3000 && nodemon node index.js",
+    "start:w": "set POSTGRES_PORT=5432&& set POSTGRES_HOST=localhost&& set POSTGRES_USER=postgres&& set POSTGRES_PASSWORD=123&& set POSTGRES_DB=nestjs&& nodemon node index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

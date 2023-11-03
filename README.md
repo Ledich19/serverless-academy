@@ -106,3 +106,15 @@ cd .\08_json_sorting\
 ```
 $ npm start
 ```
+## 09
+docker compose up dev-db -d
+
+docker exec -it 09_auth_api-dev-db-1 psql --version
+docker exec -it 09_auth_api-dev-db-1 psql -h localhost -U postgres -d nestjs
+
+CREATE TABLE your_table_name (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    passwordHash VARCHAR(255) NOT NULL,
+    refreshToken VARCHAR(255)
+);
