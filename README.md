@@ -106,7 +106,7 @@ cd .\08_json_sorting\
 $ npm start
 ```
 
-## 09
+## 09_auth_api
 
 docker compose up dev-db -d
 
@@ -149,3 +149,23 @@ $ npm run dev:win
   }
 }
 ```
+## 11_json_storage
+
+### GET /:url
+- **Description**: Retrieve a JSON document stored on the server.
+- **URL Parameter**:
+  - `url` (string): The path to the JSON document relative to the base URL.
+- **Response**:
+  - **200 OK**: The JSON document has been successfully retrieved.
+  - **404 Not Found**: The requested JSON document does not exist.
+  - **500 Internal Server Error**: An internal server error occurred.
+- **Example Request**:
+  ```http://localhost:4000/my/json-2```
+
+### PUT /mydocument
+```http://localhost:4000/my/json-2```
+Content-Type: application/json
+
+{
+  "key": "value"
+}
