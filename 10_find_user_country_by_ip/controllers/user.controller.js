@@ -1,17 +1,15 @@
-const { userExtractor } = require('../utils/middleware');
-
+const { findIp, normalizeIP } = require('../utils/user.utils');
 const userRouter = require('express').Router();
 
-userRouter.get('/api', userExtractor, async (request, response, next) => {
+userRouter.get('/ip', async (request, response, next) => {
+  const { ip } = request;
   try {
-    const { user } = request;
-    if (!user) return;
+    console.log(ip);
+    const decimalIP = normalizeIP(ip);
+    const result = await findIp(decimalIP);
     response.send({
       success: true,
-      data: {
-        id: user.id,
-        email: user.email,
-      },
+      data: { ...result, ip: ip },
     });
   } catch (error) {
     next(error);

@@ -119,3 +119,33 @@ email VARCHAR(255) NOT NULL,
 passwordHash VARCHAR(255) NOT NULL,
 refreshToken VARCHAR(255)
 );
+
+## 10_find_user_country_by_ip
+
+```
+$ npm run dev:win
+```
+
+### Request
+
+- Method: GET
+- Path: /user/ip
+
+### Response
+
+- Status Codes:
+- 200: Successful request.
+- Response Body:
+
+```
+{
+  success: boolean,
+  data: {
+    rangeFrom: number,
+    rangeTo: number,
+    countryCode: string,
+    country: string,
+    ip: string,
+  }
+}
+```

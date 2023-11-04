@@ -12,6 +12,7 @@ app.use('/user', userRouter);
 
 const unknownEndpoint = (request, response) => {
   response.status(404).send({
+    success: false,
     error: 'unknown endpoint',
   });
 };
