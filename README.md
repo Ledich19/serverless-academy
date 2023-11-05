@@ -111,6 +111,7 @@ $ npm start
 docker compose up dev-db -d
 
 docker exec -it 09_auth_api-dev-db-1 psql --version
+
 docker exec -it 09_auth_api-dev-db-1 psql -h localhost -U postgres -d nestjs
 
 CREATE TABLE your_table_name (
@@ -169,3 +170,44 @@ Content-Type: application/json
 {
   "key": "value"
 }
+
+## 12_short_linker_api
+
+### first start
+
+1. Start the PostgreSQL database container using Docker Compose:
+```
+docker-compose up dev-db -d
+```
+2. Ensure that PostgreSQL is installed in your container and check its version:
+```
+docker exec -it <container_id> psql --version
+```
+3. Connect to PostgreSQL using the psql command, specifying the host, username, and database name:
+```
+docker exec -it <container_id> psql -h localhost -U postgres -d nestjs
+```
+4. Enter the password if prompted.
+
+5. Create the table:
+```
+create TABLE links (
+  id serial PRIMARY KEY,
+  "shortLink" VARCHAR(255) NOT NULL,
+  "longLink" TEXT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+```
+6. Connect to the new database if necessary:
+```
+\connect <db_name>;
+```
+7. Ensure that the "links" table has been successfully created:
+```
+select * from links;
+```
+### Server Start
+To get started, you also need to set environment variables. The list of variables is located in the _.env.example_ file.
+```
+npm start
+```
