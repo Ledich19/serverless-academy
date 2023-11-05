@@ -9,9 +9,7 @@ linkerRouter.put('/short', async (request, response, next) => {
     } = request;
     const linkInDB = await getLinkFromDB('longLink', link)
     if (linkInDB) response.status(200).json({ status: true, data: { link: linkInDB.shortLink } });
-    console.log('-=-1');
     const newLink = await createLinkInDB(link)
-    console.log('-=-', newLink);
     response.status(201).json({ status: true, data: { link: newLink.shortLink } });
   } catch (error) {
     next(error);

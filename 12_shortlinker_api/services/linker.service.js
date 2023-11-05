@@ -6,10 +6,7 @@ const commands = {
   'shortLink': 'SELECT * FROM links where "shortLink" = $1',
   'longLink': 'SELECT * FROM links where "longLink" = $1'
 }
-
-  console.log('=====2', column, value);
   const link = await db.query(commands[column], [value]);
-  console.log('=====1', link.rows[0]);
   return link.rows[0];
 }
 
@@ -23,7 +20,6 @@ const createLinkInDB = async(link)=> {
   const newLink = await db.query('INSERT INTO links ("longLink", "shortLink") values ($1, $2) RETURNING *', [link, '']);
   const uniqueKey = generateUniqueKey(newLink.rows[0].id, secretKey);
   const updatedLink = await updateLinkInDB(newLink.rows[0].id, uniqueKey);
-  console.log('updatedLink', updatedLink);
   return updatedLink;
 }
 
