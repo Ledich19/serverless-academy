@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev:win": "set JWT_REFRESH_SECRET=jwrRefresh&& set JWT_SECRET=secret&& set JWT_TIME_REFRESH=1h&& set JWT_TIME=1h&& set PORT=4000&& set POSTGRES_PORT=5432&& set POSTGRES_HOST=localhost&& set POSTGRES_USER=postgres&& set POSTGRES_PASSWORD=123&& set POSTGRES_DB=nestjs&& set CRYPT_SALT==10&& nodemon node index.js",
+    "dev:win": "set JWT_REFRESH_SECRET=jwrRefresh&& set SECRET=secret&& set JWT_TIME_REFRESH=1h&& set JWT_TIME=1h&& set PORT=4000&& set POSTGRES_PORT=5432&& set POSTGRES_HOST=localhost&& set POSTGRES_USER=postgres&& set POSTGRES_PASSWORD=123&& set POSTGRES_DB=nestjs&& set CRYPT_SALT==10&& nodemon node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

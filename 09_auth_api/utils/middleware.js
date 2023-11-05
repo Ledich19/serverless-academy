@@ -8,7 +8,7 @@ const errorHandler = (error, request, response, next) => {
     response.status(409).json({ success: false, error: 'Такий користувач вже існує' });
   }
   if (error.message === 'Unauthorized') {
-    response.status(401).json({ success: false, error: 'Unauthorized' });
+    response.status(404).json({ success: false, error: 'Invalid email or password' });
   }
   if (error.name === 'TokenExpiredError') {
     response.status(401).json({ success: false, error: 'token missing or invalid' });

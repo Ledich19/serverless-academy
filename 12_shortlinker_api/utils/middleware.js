@@ -1,5 +1,10 @@
+const { NOT_FOUND } = require("./constants");
+
 const errorHandler = (error, request, response, next) => {
   console.error(error.message);
+  if(error.message === NOT_FOUND){
+    response.status(404).json({ success: false, error: 'NOT FOUND'});
+  }
   response.status(500).json({ success: false, error: 'Internal Server Error' });
   return next(error);
 };
